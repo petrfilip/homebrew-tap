@@ -8,6 +8,8 @@ Native macOS GUI for Docker containers and runtimes, including
 [Lighter](https://github.com/fieldwork-ai/lighter) and
 [Colima](https://github.com/abiosoft/colima).
 
+![DockerNest running with the Lighter runtime](assets/dockernest.png)
+
 ### Install and launch
 
 Requires macOS 14 or later, Homebrew, and Apple Command Line Tools (or Xcode). Homebrew downloads
