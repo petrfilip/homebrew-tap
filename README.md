@@ -4,7 +4,9 @@ Homebrew tap for Petr Filip tools and macOS apps.
 
 ## DockerNest
 
-Native macOS GUI for Docker containers and runtimes, including Colima and Lighter.
+Native macOS GUI for Docker containers and runtimes, including
+[Lighter](https://github.com/fieldwork-ai/lighter) and
+[Colima](https://github.com/abiosoft/colima).
 
 ### Install and launch
 
@@ -17,14 +19,20 @@ brew install petrfilip/tap/dockernest
 dockernest
 ```
 
-Install runtime tools separately, for example:
+Choose a runtime and install its tools separately:
+
+**[Lighter](https://github.com/fieldwork-ai/lighter)** — requires Apple Silicon and macOS 15 or later.
+
+```bash
+brew tap fieldwork-ai/tap
+brew install lighter docker docker-compose
+```
+
+**[Colima](https://github.com/abiosoft/colima)**:
 
 ```bash
 brew install colima docker docker-compose
 ```
-
-For Lighter instead, use `brew tap fieldwork-ai/tap` and `brew install lighter`
-(Lighter requires Apple Silicon and macOS 15 or later).
 
 DockerNest is automatically installed in `/Applications` and is available in
 Finder, Spotlight, and Launchpad. No manual link or extra installation step is needed.
