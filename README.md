@@ -8,7 +8,7 @@ Native macOS GUI for Docker containers and runtimes, including Colima and Lighte
 
 ### Install and launch
 
-Requires macOS 14 or later, Homebrew, and Xcode 15 or later. Homebrew downloads
+Requires macOS 14 or later, Homebrew, and Apple Command Line Tools (or Xcode). Homebrew downloads
 verified source archives and builds the app locally. No Apple Developer Program
 membership is required. The first installation can take several minutes.
 
@@ -26,12 +26,8 @@ brew install colima docker docker-compose
 For Lighter instead, use `brew tap fieldwork-ai/tap` and `brew install lighter`
 (Lighter requires Apple Silicon and macOS 15 or later).
 
-### Spotlight and Launchpad
-
-```bash
-mkdir -p ~/Applications
-ln -s "$(brew --prefix dockernest)/libexec/DockerNest.app" ~/Applications/DockerNest.app
-```
+DockerNest is automatically installed in `/Applications` and is available in
+Finder, Spotlight, and Launchpad. No manual link or extra installation step is needed.
 
 ### Update and uninstall
 
@@ -41,14 +37,17 @@ brew upgrade dockernest
 brew uninstall dockernest
 ```
 
-If you created the optional Spotlight link, remove `~/Applications/DockerNest.app`
-after uninstalling the package.
+Uninstalling removes the application and its launcher. Homebrew also removes its build sources.
+
+If you installed the older formula, `brew update` recognizes the migration to a
+cask. Remove the old formula when prompted by Homebrew.
 
 ### Releases
 
 Versioned source archives and their SHA-256 checksums are published in this
 repository's [GitHub Releases](https://github.com/petrfilip/homebrew-tap/releases).
-Each formula pins the archive and SwiftTerm dependency by checksum. The app is
-built and ad-hoc signed on the installing computer.
+The cask pins its source archive by checksum, including the verified SwiftTerm
+library sources. The app is built and ad-hoc signed on the installing computer.
+No additional Swift packages are downloaded during installation.
 
 DockerNest is licensed under MIT; the source archive includes its license.
