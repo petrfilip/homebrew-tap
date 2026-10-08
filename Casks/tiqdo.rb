@@ -15,6 +15,14 @@ cask "tiqdo" do
     args:       ["APP_VERSION=#{version}", "BUILD_NUMBER=#{version.to_s.delete(".")}",
                  "/bin/bash", "#{staged_path}/Tiqdo-#{version}/build.sh"],
   }
+  binary "tiqdo"
+
+  preflight_steps do
+    write "tiqdo", <<~SH
+      #!/bin/bash
+      exec /usr/bin/open "{{appdir}}/Tiqdo.app" "$@"
+    SH
+  end
 
   uninstall quit: "cz.tix.tiqdo"
 

@@ -18,7 +18,7 @@ or Apple Developer Program membership are required.
 
 ```bash
 brew install --cask petrfilip/tap/tiqdo
-open /Applications/Tiqdo.app
+tiqdo
 ```
 
 If you previously installed with Tiqdo's `./build.sh --install`, quit the app
@@ -32,7 +32,8 @@ brew upgrade --cask tiqdo
 brew uninstall --cask tiqdo
 ```
 
-Uninstalling preserves tasks and history in `~/Library/Application Support/Tiqdo`.
+Uninstalling removes the app and the `tiqdo` launcher, and preserves tasks and
+history in `~/Library/Application Support/Tiqdo`.
 Versioned source archives are published in
 [Tiqdo's GitHub Releases](https://github.com/petrfilip/tiqdo/releases).
 Tiqdo is licensed under MIT.
