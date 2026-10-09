@@ -1,8 +1,8 @@
 cask "dockernest" do
-  version "2026.10.09.1"
-  sha256 "ac7fd57b8cbf6437755cce1b6c790d09714a24a9b892dffb3b516d916e5bad5b"
+  version "2026.10.09.2"
+  sha256 "7ddc92c2949757381fb8967f212220e7628cfe6fce5bb13405d261d0f4166b36"
 
-  url "https://github.com/petrfilip/homebrew-tap/releases/download/v2026.10.09.1/DockerNest-2026.10.09.1-source.tar.gz",
+  url "https://github.com/petrfilip/homebrew-tap/releases/download/v2026.10.09.2/DockerNest-2026.10.09.2-source.tar.gz",
       verified: "github.com/petrfilip/homebrew-tap/"
   name "DockerNest"
   desc "Native macOS GUI for Docker containers and runtimes"
@@ -13,7 +13,7 @@ cask "dockernest" do
   # The archive includes checksum-verified SwiftTerm sources; build locally without fetching packages.
   installer script: {
     executable: "/bin/bash",
-    args: ["#{staged_path}/DockerNest-2026.10.09.1/scripts/build-app.sh", "--version", version.to_s,
+    args: ["#{staged_path}/DockerNest-2026.10.09.2/scripts/build-app.sh", "--version", version.to_s,
            "--build-number", version.to_s.delete("."), "--disable-sandbox"],
   }
 
@@ -24,7 +24,7 @@ cask "dockernest" do
     SH
   end
 
-  app "DockerNest-2026.10.09.1/dist/DockerNest.app"
+  app "DockerNest-2026.10.09.2/dist/DockerNest.app"
   binary "dockernest"
 
   caveats <<~EOS
